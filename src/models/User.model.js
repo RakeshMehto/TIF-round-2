@@ -1,20 +1,21 @@
-import { Sequelize } from 'sequelize';
+import { DataTypes } from 'sequelize';
+import sequelize from '../utils/sequelize_db';
 
 const User = sequelize.define('user', {
   id: {
-    type: Sequelize.UUID,
-    defaultValue: Sequelize.UUIDV4,
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
     primaryKey: true
   },
-  first_name: Sequelize.STRING,
-  last_name: Sequelize.STRING,
+  first_name: DataTypes.STRING,
+  last_name: DataTypes.STRING,
   email: {
-    type: Sequelize.STRING,
+    type: DataTypes.STRING,
     unique: true
   },
-  password: Sequelize.STRING,
+  password: DataTypes.STRING,
   roleId: {
-    type: Sequelize.UUID,
+    type: DataTypes.UUID,
     defaultValue: null,
     references: {
       model: 'Role',
@@ -22,13 +23,15 @@ const User = sequelize.define('user', {
     }
   },
   created: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   },
   updated: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   }
 });
 
 User.sync()
+
+export default User;

@@ -1,4 +1,5 @@
-import { Sequelize } from 'sequelize';
+import { DataTypes } from 'sequelize';
+import sequelize from '../utils/sequelize_db';
 
 const Student = sequelize.define('student', {
   id: {
@@ -30,3 +31,7 @@ const Student = sequelize.define('student', {
     defaultValue: Sequelize.NOW
   }
 });
+
+Student.sync()
+
+export default Student;

@@ -1,19 +1,23 @@
-import { Sequelize } from 'sequelize';
+import { DataTypes } from 'sequelize';
+import sequelize from '../utils/sequelize_db';
 
 const Role = sequelize.define('role', {
   id: {
-    type: Sequelize.UUID,
-    defaultValue: Sequelize.UUIDV4,
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
     primaryKey: true
   },
-  name: Sequelize.STRING,
-  scopes: Sequelize.ARRAY(Sequelize.STRING),
+  name: DataTypes.STRING,
+  scopes: DataTypes.ARRAY(DataTypes.STRING),
   created: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   },
   updated: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   }
 });
+
+Role.sync()
+export default Role;

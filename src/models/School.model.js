@@ -1,21 +1,25 @@
-import { Sequelize } from 'sequelize';
+import { DataTypes } from 'sequelize';
+import sequelize from '../utils/sequelize_db';
 
 const School = sequelize.define('school', {
   id: {
-    type: Sequelize.UUID,
-    defaultValue: Sequelize.UUIDV4,
+    type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV4,
     primaryKey: true
   },
-  name: Sequelize.STRING,
-  city: Sequelize.STRING,
-  state: Sequelize.STRING,
-  country: Sequelize.STRING,
+  name: DataTypes.STRING,
+  city: DataTypes.STRING,
+  state: DataTypes.STRING,
+  country: DataTypes.STRING,
   created: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   },
   updated: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   }
 });
+
+export default School;
+
