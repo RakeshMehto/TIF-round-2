@@ -13,6 +13,7 @@ const User = sequelize.define('user', {
     type: DataTypes.STRING,
     unique: true
   },
+  mobile: DataTypes.STRING,
   password: DataTypes.STRING,
   roleId: {
     type: DataTypes.UUID,
