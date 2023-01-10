@@ -80,3 +80,29 @@ Checklist before submission -
 
 BIBLIOGRAPHY
 Scopes (<https://oauth.net/2/scope/>)
+
+.
+├── app.js
+├── controllers
+│   ├── roleController.js
+│   ├── schoolController.js
+│   ├── studentController.js
+│   ├── userController.js
+├── middlewares
+│   ├── auth.js
+│   ├── errorHandler.js
+├── models
+│   ├── index.js
+│   ├── role.js
+│   ├── school.js
+│   ├── student.js
+│   ├── user.js
+├── routes
+│   ├── roleRoutes.js
+│   ├── schoolRoutes.js
+│   ├── studentRoutes.js
+│   ├── userRoutes.js
+└── utils
+    ├── scopes.js
+    ├── tokens.js
+
