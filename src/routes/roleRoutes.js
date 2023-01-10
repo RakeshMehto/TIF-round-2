@@ -4,7 +4,7 @@ import { auth } from '../middlewares/auth.js';
 
 const router = express.Router();
 
-router.post('/role', auth('no scope needed'), createRole);
-router.get('/role', auth('role-get'), getAllRoles);
+router.post('/', auth('no scope needed'), createRole);
+router.get('/', auth('role-get'), getAllRoles);
 
 export default router;
