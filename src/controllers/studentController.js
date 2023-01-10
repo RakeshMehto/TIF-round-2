@@ -1,5 +1,5 @@
-import { Student, User, School } from '../models'
-import scopes from '../utils/scopes';
+import { Student, User, School } from '../models/index.js'
+import scopes from '../utils/scopes.js';
 
 export const createStudent = (req, res, next) => {
   // Validate the request body and return an error if invalid

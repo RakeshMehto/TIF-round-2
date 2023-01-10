@@ -1,7 +1,7 @@
-import { Role, User} from '../models';
+import { Role, User} from '../models/index.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import scopes from '../utils/scopes';
+import scopes from '../utils/scopes.js';
 
 export const signup = (req, res, next) => {
   // Validate the request body and return an error if invalid

@@ -1,6 +1,6 @@
 import express from 'express';
-import { createSchool, getAllSchools, getStudents } from '../controllers/schoolControllers'
-import { auth } from '../middlewares/auth';
+import { createSchool, getAllSchools, getStudents } from '../controllers/schoolControllers.js'
+import { auth } from '../middlewares/auth.js';
 
 const router = express.Router();
 

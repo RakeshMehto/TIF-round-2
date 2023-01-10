@@ -1,9 +1,10 @@
-import sequelize from '../config/sequelize_db'
+import sequelize from '../config/sequelize_db.js'
 
 import Role from './Role'
 import School from './School'
 import Student from './Student'
 import User from './User'
+
 
 // Initialize the models
 User.init(sequelize);

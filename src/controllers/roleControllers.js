@@ -1,5 +1,4 @@
-import Role from '../models/Role.model'
-
+import { Role }from '../models/index.js';
 export const createRole = (req, res, next) => {
   // Validate the request body and return an error if invalid
   if (!req.body.name || !req.body.scopes) {
