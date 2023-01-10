@@ -1,9 +1,7 @@
-const Student = require('../models').Student;
-const User = require('../models').User;
-const School = require('../models').School;
-const scopes = require('../utils/scopes');
+import { Student, User, School } from '../models'
+import scopes from '../utils/scopes';
 
-exports.createStudent = (req, res, next) => {
+export const createStudent = (req, res, next) => {
   // Validate the request body and return an error if invalid
   if (!req.body.name || !req.body.userId || !req.body.schoolId) {
     return res.status(400).send({ message: 'Missing required fields' });
@@ -41,7 +39,7 @@ exports.createStudent = (req, res, next) => {
     .catch((error) => res.status(500).send({ message: error.message }));
 };
 
-exports.getAllStudents = (req, res, next) => {
+export const getAllStudents = (req, res, next) => {
   // Check if the user has the correct scope to get all students
   if (!scopes.checkScope(req.user.scopes, 'student-get')) {
     return res.status(401).send({ message: 'Unauthorized' });
