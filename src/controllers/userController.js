@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import scopes from '../utils/scopes.js';
 
-export const signup = (req, res, next) => {
+export const signup = (req, res) => {
   // Validate the request body and return an error if invalid
   if (!req.body.first_name || !req.body.last_name || !req.body.email || !req.body.mobile || !req.body.password) {
     return res.status(400).send({ message: 'Missing required fields' });
@@ -23,7 +23,7 @@ export const signup = (req, res, next) => {
     .catch((error) => res.status(500).send({ message: error.message }));
 };
 
-export const signin = (req, res, next) => {
+export const signin = (req, res) => {
   // Validate the request body and return an error if invalid
   if (!req.body.email || !req.body.password) {
     return res.status(400).send({ message: 'Missing required fields' });
@@ -58,7 +58,7 @@ export const signin = (req, res, next) => {
     .catch((error) => res.status(500).send({ message: error.message }));
 }
 
-export const getAll = (req, res, next) => {
+export const getAll = (req, res) => {
   // Check if the user has the 'user-get' scope
   if (!scopes.check(req.user.scopes, 'user-get')) {
     return res.status(401).send({ message: 'Insufficient scope' });
@@ -68,7 +68,7 @@ export const getAll = (req, res, next) => {
     .catch((error) => res.status(500).send({ message: error.message }));
 };
 
-export const getSingle = (req, res, next) => {
+export const getSingle = (req, res) => {
   // Check if the user has the 'user-get' scope
   if (!scopes.check(req.user.scopes, 'user-get')) {
     return res.status(401).send({ message: 'Insufficient scope' });

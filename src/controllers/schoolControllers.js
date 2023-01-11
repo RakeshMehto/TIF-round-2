@@ -1,7 +1,7 @@
 import { School } from '../models/index.js';
 import scopes from '../utils/scopes.js';
 
-export const createSchool = (req, res, next) => {
+export const createSchool = (req, res) => {
   // Validate the request body and return an error if invalid
   if (!req.body.name || !req.body.city || !req.body.state || !req.body.country) {
     return res.status(400).send({ message: 'Missing required fields' });
@@ -22,7 +22,7 @@ export const createSchool = (req, res, next) => {
     .catch((error) => res.status(500).send({ message: error.message }));
 };
 
-export const getAllSchools = (req, res, next) => {
+export const getAllSchools = (req, res) => {
   // Check if the user has the correct scope to get all schools
   if (!scopes.checkScope(req.user.scopes, 'school-get')) {
     return res.status(401).send({ message: 'Unauthorized' });
