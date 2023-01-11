@@ -1,5 +1,5 @@
-import { Role }from '../models/index.js';
-export const createRole = (req, res, next) => {
+import {Role} from '../models/index.js';
+const createRole = (req, res, next) => {
   // Validate the request body and return an error if invalid
   if (!req.body.name || !req.body.scopes) {
     return res.status(400).send({ message: 'Missing required fields' });
@@ -13,8 +13,10 @@ export const createRole = (req, res, next) => {
     .catch((error) => res.status(500).send({ message: error.message }));
 };
 
-export const getAllRoles = (req, res, next) => {
+const getAllRoles = (req, res, next) => {
   Role.findAll()
     .then((roles) => res.status(200).send(roles))
     .catch((error) => res.status(500).send({ message: error.message }));
 };
+
+export { createRole, getAllRoles };

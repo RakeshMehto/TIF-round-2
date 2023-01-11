@@ -1,4 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
+import sequelize from '../config/sequelize_db.js'
 
 class Student extends Model { }
 

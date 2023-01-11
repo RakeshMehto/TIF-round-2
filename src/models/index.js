@@ -1,10 +1,9 @@
+import Role from './Role.js'
+import School from './School.js'
+import Student from './Student.js'
+import User from './User.js'
+
 import sequelize from '../config/sequelize_db.js'
-
-import Role from './Role'
-import School from './School'
-import Student from './Student'
-import User from './User'
-
 
 // Initialize the models
 User.init(sequelize);
@@ -22,7 +21,7 @@ sequelize.sync()
   .then(() => console.log('Models synced with the database'))
   .catch((error) => console.error(error));
 
-export default models = {
+export  {
   User,
   Role,
   Student,

@@ -1,4 +1,5 @@
 import { DataTypes, Model } from 'sequelize';
+import sequelize from '../config/sequelize_db.js'
 
 class User extends Model {
   static init(sequelize) {

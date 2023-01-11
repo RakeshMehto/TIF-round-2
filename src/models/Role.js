@@ -1,5 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
-
+import sequelize from '../config/sequelize_db.js'
 class Role extends Model { }
 
 Role.init({

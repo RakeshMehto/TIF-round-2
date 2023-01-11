@@ -1,4 +1,4 @@
-export const copes = {
+const scopes = {
   'user-get': ['Admin', 'Principal'],
   'student-create': ['Admin', 'Principal'],
   'student-get': ['Admin', 'Principal'],
@@ -6,3 +6,5 @@ export const copes = {
   'school-get': ['Admin', 'Principal'],
   'school-students': ['Admin', 'Principal']
 };
+
+export default scopes
